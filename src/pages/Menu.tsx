@@ -11,9 +11,10 @@ import {
   IonToolbar, 
   IonMenuToggle, 
   IonItem,       
-  IonIcon        
+  IonIcon,        
+  IonButton
 } from '@ionic/react';
-import { homeOutline, rocketOutline } from 'ionicons/icons';
+import { homeOutline, rocketOutline,logOutOutline } from 'ionicons/icons';
 import { Route, Redirect } from 'react-router';
 import About from './About';
 import Home from './Home';
@@ -42,6 +43,12 @@ const Menu: React.FC = () => {
                               </IonItem>
                           </IonMenuToggle>
                       ))}
+                      
+                        {/*Logout Button*/}
+                        <IonButton routerLink="/it35-lab" routerDirection="back" expand="full">
+                            <IonIcon icon={logOutOutline} slot="start"> </IonIcon>
+                        Logout
+                        </IonButton>
                   </IonContent>
               </IonMenu>
               <IonRouterOutlet id="main">
