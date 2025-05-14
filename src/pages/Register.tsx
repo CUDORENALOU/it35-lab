@@ -51,7 +51,7 @@ const Register: React.FC = () => {
         style.innerHTML = `
           ion-content {
             --background: transparent;
-           background-image: url('https://wallpapers-clan.com/wp-content/uploads/2024/08/bright-moon-in-the-forest-gif-desktop-wallpaper-preview.gif');
+           background-image: url('https://wallpapers.com/images/hd/gambar-doraemon-flying-on-broom-kg13wcdc8g7mpiu3.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -120,7 +120,7 @@ const Register: React.FC = () => {
           }
     
           ion-button {
-            --background: orange;
+            --background: blue;
             --color: black;
             font-weight: bold;
             margin-top: 10px;
@@ -129,8 +129,8 @@ const Register: React.FC = () => {
           }
     
           ion-button[fill="clear"] {
-            color: orange;
-            --color: orange;
+            color:blue;
+            --color: blue;
             --background-hover: rgba(0, 255, 255, 0.1);
             text-decoration: underline;
             margin-top: 5px;
@@ -183,7 +183,7 @@ const Register: React.FC = () => {
     
           .register-text a:hover {
             color:rgb(223, 170, 23);
-            text-shadow: 0 0 10px orange;
+            text-shadow: 0 0 10px black;
           }
         `;
         document.head.appendChild(style);
@@ -258,25 +258,25 @@ const Register: React.FC = () => {
   alignItems: 'center',
   justifyContent: 'center',
   color: 'white',
-  textShadow: '0 0 12px orange',
+  textShadow: '0 0 12px blue',
   fontSize: '3rem'
 }}>Create your account</h1>
 
-                <IonInput label="Username" labelPlacement="stacked" fill="outline" type="text" placeholder="Enter a unique username" value={username} onIonChange={e => setUsername(e.detail.value!)} style={{ marginTop: '15px' ,color:'orange'}} />
-                <IonInput label="First Name" labelPlacement="stacked" fill="outline" type="text" placeholder="Enter your first name" value={firstName} onIonChange={e => setFirstName(e.detail.value!)} style={{ marginTop: '15px',color:'orange' }} />
-                <IonInput label="Last Name" labelPlacement="stacked" fill="outline" type="text" placeholder="Enter your last name" value={lastName} onIonChange={e => setLastName(e.detail.value!)} style={{ marginTop: '15px',color:'orange' }} />
-                <IonInput label="Email" labelPlacement="stacked" fill="outline" type="email" placeholder="youremail@nbsc.edu.ph" value={email} onIonChange={e => setEmail(e.detail.value!)} style={{ marginTop: '15px' ,color:'orange'}} />
-                <IonInput label="Password" labelPlacement="stacked" fill="outline" type="password" placeholder="Enter password" value={password} onIonChange={e => setPassword(e.detail.value!)} style={{ marginTop: '15px' ,color:'orange'}} >
+                <IonInput label="Username" labelPlacement="stacked" fill="outline" type="text" placeholder="Enter a unique username" value={username} onIonChange={e => setUsername(e.detail.value!)} style={{ marginTop: '15px' ,color:'blue'}} />
+                <IonInput label="First Name" labelPlacement="stacked" fill="outline" type="text" placeholder="Enter your first name" value={firstName} onIonChange={e => setFirstName(e.detail.value!)} style={{ marginTop: '15px',color:'blue' }} />
+                <IonInput label="Last Name" labelPlacement="stacked" fill="outline" type="text" placeholder="Enter your last name" value={lastName} onIonChange={e => setLastName(e.detail.value!)} style={{ marginTop: '15px',color:'blue' }} />
+                <IonInput label="Email" labelPlacement="stacked" fill="outline" type="email" placeholder="youremail@nbsc.edu.ph" value={email} onIonChange={e => setEmail(e.detail.value!)} style={{ marginTop: '15px' ,color:'blue'}} />
+                <IonInput label="Password" labelPlacement="stacked" fill="outline" type="password" placeholder="Enter password" value={password} onIonChange={e => setPassword(e.detail.value!)} style={{ marginTop: '15px' ,color:'blue'}} >
                     <IonInputPasswordToggle slot="end" />
                 </IonInput>
-                <IonInput label="Confirm Password" labelPlacement="stacked" fill="outline" type="password" placeholder="Confirm password" value={confirmPassword} onIonChange={e => setConfirmPassword(e.detail.value!)} style={{ marginTop: '15px',color:'orange' }} >
+                <IonInput label="Confirm Password" labelPlacement="stacked" fill="outline" type="password" placeholder="Confirm password" value={confirmPassword} onIonChange={e => setConfirmPassword(e.detail.value!)} style={{ marginTop: '15px',color:'blue' }} >
                     <IonInputPasswordToggle slot="end" />
                 </IonInput>
 
                 <IonButton onClick={handleOpenVerificationModal} expand="full" shape='round' style={{ marginTop: '15px' ,color:'white'}}>
                     Register
                 </IonButton>
-                <p style={{ textAlign: 'center',color:'orange' }}>
+                <p style={{ textAlign: 'center',color:'blue' }}>
   Already have an account? <a href="/it35-lab">Sign in</a>
 </p>
 
@@ -284,7 +284,7 @@ const Register: React.FC = () => {
                 {/* Verification Modal */}
                 <IonModal isOpen={showVerificationModal} onDidDismiss={() => setShowVerificationModal(false)}>
                     <IonContent className="ion-padding">
-                        <IonCard className="ion-padding" style={{ marginTop: '25%' ,color:'orange'}}>
+                        <IonCard className="ion-padding" style={{ marginTop: '25%' ,color:'blue'}}>
                             <IonCardHeader>
                                 <IonCardTitle>User Registration Details</IonCardTitle>
                                 <hr />
