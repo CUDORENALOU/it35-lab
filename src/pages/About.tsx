@@ -1,90 +1,107 @@
+import React, { useState } from 'react';
 import { 
-  IonButtons,
+  IonButtons, 
   IonContent, 
   IonHeader, 
   IonMenuButton, 
   IonPage, 
   IonTitle, 
   IonToolbar, 
-  IonText, 
   IonCard, 
-  IonCardContent 
+  IonCardContent, 
+  IonText, 
+  IonGrid, 
+  IonRow, 
+  IonCol, 
+  IonList, 
+  IonItem, 
+  IonModal, 
+  IonButton 
 } from '@ionic/react';
 
 const About: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar color="primary">
           <IonButtons slot="start">
-            <IonMenuButton></IonMenuButton>
+            <IonMenuButton />
           </IonButtons>
-          <IonTitle>About</IonTitle>
+          <IonTitle>About the App</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonCard>
-          <IonCardContent>
-            <IonText>
-              <h2>Welcome to Our App!</h2>
-              <p>
-                This application is built using Ionic and React, designed to help users manage their tasks and personal profiles. We provide a seamless experience for users, with features like authentication, profile management, and more.
-              </p>
 
-              <h3>Key Features:</h3>
-              <ul>
-                <li><strong>Login & Authentication:</strong> Secure user login and sign-up through integrated authentication.</li>
-                <li><strong>Profile Management:</strong> Users can update their profile information easily.</li>
-                <li><strong>Tabs & Sidebar:</strong> Navigate the app efficiently with a side navigation bar and tab-based structure.</li>
-                <li><strong>Supabase Backend:</strong> Integrated with Supabase for real-time database operations, providing secure and reliable backend support.</li>
-              </ul>
+      <IonContent fullscreen style={{ backgroundColor: '#f7f7f7' }}>
+        <IonGrid style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+          <IonRow className="ion-justify-content-center">
+            <IonCol size="12" size-md="8">
+              {/* Introduction */}
+              <IonCard style={{ borderRadius: '10px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', backgroundColor: '#ffffff', marginBottom: '20px' }}>
+                <IonCardContent>
+                  <IonText>
+                    <h2 style={{ fontSize: '2.2em', textAlign: 'center', color: '#333', fontWeight: '600', marginBottom: '20px', fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif' }}>
+                      Welcome to My App
+                    </h2>
+                    <p style={{ fontSize: '1.15em', color: '#555', textAlign: 'center', lineHeight: '1.8', marginBottom: '20px', fontFamily: 'Arial, Helvetica, sans-serif' }}>
+                      This is a simple mobile app created as part of my learning journey in app development. Built using **Ionic** and **React**, this app allows me to showcase the concepts I've learned in app development.
+                    </p>
+                  </IonText>
+                </IonCardContent>
+              </IonCard>
 
-              <h3>Development Stack:</h3>
-              <p>
-                Built with <strong>Ionic</strong> for the frontend, powered by <strong>React</strong> for a modern, dynamic experience, and connected to <strong>Supabase</strong> as the backend.
-              </p>
+              {/* Key Features */}
+              <IonCard style={{ borderRadius: '10px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', backgroundColor: '#ffffff', marginBottom: '20px' }}>
+                <IonCardContent>
+                  <IonText>
+                    <h3 style={{ fontSize: '1.5em', color: '#333', fontWeight: '500', marginBottom: '20px', fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif' }}>
+                      Key Features
+                    </h3>
+                    <IonList lines="none" style={{ fontSize: '1.1em', color: '#555', fontFamily: 'Arial, Helvetica, sans-serif' }}>
+                      <IonItem style={{ paddingLeft: '0px' }}><strong>Cross-Platform Support:</strong> The app runs on both iOS and Android devices, made possible by Ionic Framework.</IonItem>
+                      <IonItem style={{ paddingLeft: '0px' }}><strong>Simple UI:</strong> A clean, minimal design that’s easy to use and navigate.</IonItem>
+                      <IonItem style={{ paddingLeft: '0px' }}><strong>Real-Time Updates:</strong> Real-time data syncing with backend services like Supabase.</IonItem>
+                    </IonList>
+                    <IonButton onClick={openModal} color="secondary" expand="full" style={{ marginTop: '20px', fontWeight: '600', fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif' }}>
+                      Learn More
+                    </IonButton>
+                  </IonText>
+                </IonCardContent>
+              </IonCard>
 
-              <h3>Cool Styling:</h3>
-              <p>
-                The design of this app is inspired by the developer's favorite character, <strong>Doraemon</strong>. The playful colors, simple shapes, and clean design reflect the cheerful and friendly nature of Doraemon, combining both functionality and style. 
-                The background is a soft blue to mimic Doraemon’s face, with accents of red to represent his iconic scarf and bell. This approach not only brings a fun and engaging atmosphere to the app, but also makes it visually appealing and easy to navigate.
-              </p>
-            </IonText>
-          </IonCardContent>
-        </IonCard>
+              {/* Modal with Detailed Information */}
+              <IonModal isOpen={isModalOpen} onDidDismiss={closeModal}>
+                <IonContent>
+                  <IonCard style={{ margin: '20px', borderRadius: '10px' }}>
+                    <IonCardContent>
+                      <IonText>
+                        <h2 style={{ fontSize: '1.8em', color: '#333', fontWeight: '600', marginBottom: '20px', fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif' }}>App Development Overview</h2>
+                        <p style={{ fontSize: '1.1em', color: '#555', lineHeight: '1.7', marginBottom: '20px', fontFamily: 'Arial, Helvetica, sans-serif' }}>
+                          Here's a quick summary of the app development process:
+                        </p>
+                        <ul style={{ fontSize: '1.1em', color: '#555', lineHeight: '1.8', paddingLeft: '20px', fontFamily: 'Arial, Helvetica, sans-serif' }}>
+                          <li><strong>Planning:</strong> Understanding the problem, gathering requirements, and defining the app’s objectives.</li>
+                          <li><strong>Design:</strong> Creating wireframes and user interfaces for a seamless experience.</li>
+                          <li><strong>Development:</strong> Writing the code for the frontend and backend of the app, integrating APIs, and managing data.</li>
+                          <li><strong>Testing:</strong> Ensuring the app works properly by performing testing on multiple devices.</li>
+                          <li><strong>Deployment:</strong> Launching the app on app stores and making it available to users.</li>
+                        </ul>
+                        <IonButton onClick={closeModal} expand="full" color="primary" style={{ marginTop: '20px', fontWeight: '600', fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif' }}>
+                          Close
+                        </IonButton>
+                      </IonText>
+                    </IonCardContent>
+                  </IonCard>
+                </IonContent>
+              </IonModal>
 
-        <IonCard>
-          <IonCardContent>
-            <IonText>
-              <h3>IT-35A Application Development</h3>
-              <p>
-                This app is a part of the <strong>IT-35A Application Development</strong> project. The course focuses on building real-world applications using modern frameworks and backend technologies. This project provides practical experience in developing full-stack applications, with emphasis on frontend technologies like Ionic and React, and backend integration through services like Supabase.
-              </p>
-              <p>
-                The application we’ve developed in this project covers various important aspects of software development, including:
-              </p>
-              <ul>
-                <li><strong>Frontend Development:</strong> Building dynamic user interfaces using Ionic and React.</li>
-                <li><strong>Authentication:</strong> Implementing user authentication and profile management features.</li>
-                <li><strong>Backend Integration:</strong> Connecting the app to a Supabase backend for real-time data management.</li>
-                <li><strong>UI/UX Design:</strong> Creating a visually appealing design, inspired by the character Doraemon to make the app more engaging.</li>
-              </ul>
-              <p>
-                This project is not just about coding; it’s also about understanding how to design an app, implement a backend, and ensure a smooth user experience, preparing us for the real-world challenges of application development.
-              </p>
-            </IonText>
-          </IonCardContent>
-        </IonCard>
-
-        <IonCard>
-          <IonCardContent>
-            <IonText>
-              <p style={{ fontSize: '1.2em', fontStyle: 'italic', textAlign: 'center' }}>
-                Developed by: <strong>Renalou Cudo</strong>
-              </p>
-            </IonText>
-          </IonCardContent>
-        </IonCard>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
       </IonContent>
     </IonPage>
   );

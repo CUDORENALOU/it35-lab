@@ -37,7 +37,7 @@ const Search: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton></IonMenuButton>
           </IonButtons>
-          <IonTitle>Contact</IonTitle>
+          <IonTitle>Contacts</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -100,15 +100,15 @@ const Search: React.FC = () => {
             </IonCardHeader>
             <IonCardContent>
               <IonText>
-                <p><strong>Lives in:</strong> Manolo Fortich, Bukidnon</p>
+                <p><strong>Lives in:</strong> Lunocan, Manolo Fortich, Bukidnon</p>
                 <p><strong>Gender:</strong> Female</p>
                 <p><strong>School:</strong></p>
                 <ul>
-                  <li><strong>Elementary:</strong> Manolo Elementary School</li>
-                  <li><strong>High School:</strong> Manolo National High School</li>
+                  <li><strong>Elementary:</strong> Lunocan Elementary School</li>
+                  <li><strong>High School:</strong> Alae National High School</li>
                   <li><strong>College:</strong> Northern Bukidnon State College</li>
                 </ul>
-                <p><strong>Course:</strong> Technology (3rd Year Student)</p>
+                <p><strong>Course:</strong>   Bachelor of Science in Information Technology (3rd Year Student)</p>
               </IonText>
             </IonCardContent>
           </IonCard>
@@ -121,10 +121,10 @@ const Search: React.FC = () => {
             <IonCardContent>
               <IonText>
                 <p>
-                  I'm available via phone, Facebook, or you can visit me at my office for any inquiries.
+                  I'm available via phone and Facebook
                 </p>
                 <p>
-                  Don't hesitate to reach out—I’m here to help you with any questions you may have!
+                  Don't hesitate to reach out, I’m here to help you with any questions you may have!
                 </p>
               </IonText>
             </IonCardContent>
